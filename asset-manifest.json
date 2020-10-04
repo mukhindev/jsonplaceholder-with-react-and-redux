@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jsonplaceholder-with-react-and-redux/static/css/main.2ce55943.chunk.css",
+    "main.js": "/jsonplaceholder-with-react-and-redux/static/js/main.b3ce74b3.chunk.js",
+    "main.js.map": "/jsonplaceholder-with-react-and-redux/static/js/main.b3ce74b3.chunk.js.map",
+    "runtime-main.js": "/jsonplaceholder-with-react-and-redux/static/js/runtime-main.a92910f0.js",
+    "runtime-main.js.map": "/jsonplaceholder-with-react-and-redux/static/js/runtime-main.a92910f0.js.map",
+    "static/js/2.0203fdd7.chunk.js": "/jsonplaceholder-with-react-and-redux/static/js/2.0203fdd7.chunk.js",
+    "static/js/2.0203fdd7.chunk.js.map": "/jsonplaceholder-with-react-and-redux/static/js/2.0203fdd7.chunk.js.map",
+    "index.html": "/jsonplaceholder-with-react-and-redux/index.html",
+    "precache-manifest.c68654623486252c3776c8509ed4986e.js": "/jsonplaceholder-with-react-and-redux/precache-manifest.c68654623486252c3776c8509ed4986e.js",
+    "service-worker.js": "/jsonplaceholder-with-react-and-redux/service-worker.js",
+    "static/css/main.2ce55943.chunk.css.map": "/jsonplaceholder-with-react-and-redux/static/css/main.2ce55943.chunk.css.map",
+    "static/js/2.0203fdd7.chunk.js.LICENSE.txt": "/jsonplaceholder-with-react-and-redux/static/js/2.0203fdd7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a92910f0.js",
+    "static/js/2.0203fdd7.chunk.js",
+    "static/css/main.2ce55943.chunk.css",
+    "static/js/main.b3ce74b3.chunk.js"
+  ]
+}
