@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { add1, sub1, addNumber1, addNumberByTimer } from '../redux/actions/actions.js'
 import './Counter.css'
 
-function App ({ counter, onAdd, onSub, onAddNumber }) {
+function App ({ counter, onAdd, onSub, onAddNumber, onAsync }) {
   const [number, setNumber] = React.useState(0)
 
   return (
@@ -19,6 +20,8 @@ function App ({ counter, onAdd, onSub, onAddNumber }) {
         size={5}
       />
       <button onClick={() => onAddNumber(number)}>+ число из поля</button>
+      <hr />
+      <button onClick={onAsync}>+50 c задержкой 2с</button>
     </div>
   )
 }
@@ -31,9 +34,10 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    onAdd: () => dispatch({ type: 'ADD_1' }),
-    onSub: () => dispatch({ type: 'SUB_1' }),
-    onAddNumber: (number) => dispatch({ type: 'ADD_NUMBER_1', payload: number })
+    onAdd: () => dispatch(add1()),
+    onSub: () => dispatch(sub1()),
+    onAddNumber: (number) => dispatch(addNumber1(number)),
+    onAsync: () => dispatch(addNumberByTimer())
   }
 }
 
@@ -41,7 +45,8 @@ App.propTypes = {
   counter: PropTypes.number,
   onAdd: PropTypes.func,
   onSub: PropTypes.func,
-  onAddNumber: PropTypes.func
+  onAddNumber: PropTypes.func,
+  onAsync: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
