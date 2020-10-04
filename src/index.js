@@ -19,10 +19,8 @@ const store = createStore(rootReducer, applyMiddleware(
 ))
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.querySelector('.root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('.app')
 )

@@ -1,15 +1,47 @@
-import React from 'react'
-import Counter1 from './Couter1.js'
-import Counter2 from './Couter2.js'
-import './App.css'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { fetchPosts } from '../redux/actions/actions.js'
+import Post from './Post.js'
 
-function App () {
+function App ({ posts, onFetchPosts }) {
+  useEffect(() => {
+    onFetchPosts()
+  }, [onFetchPosts])
+
   return (
-    <div className="App">
-      <Counter1 />
-      <Counter2 />
-    </div>
+    <>
+      {
+        posts.map((post) => {
+          return (
+            <Post
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              body={post.body}
+            />
+          )
+        })
+      }
+    </>
   )
 }
 
-export default App
+function mapStateToProps (state) {
+  return {
+    posts: state.posts.posts
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    onFetchPosts: () => dispatch(fetchPosts())
+  }
+}
+
+App.propTypes = {
+  posts: PropTypes.array,
+  onFetchPosts: PropTypes.func
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
