@@ -1,5 +1,5 @@
 import api from '../../api.js'
-import { SET_POSTS } from '../actions/actionTypes.js'
+import { SET_POSTS } from './actionTypes.js'
 
 export function setPosts (posts) {
   return {
@@ -11,9 +11,6 @@ export function setPosts (posts) {
 export function fetchPosts () {
   return (dispatch) => {
     api.getPosts()
-      .then((posts) => {
-        console.log(posts)
-        dispatch(setPosts(posts))
-      })
+      .then((posts) => dispatch(setPosts(posts)))
   }
 }

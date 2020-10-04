@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { fetchPosts } from '../redux/actions/actions.js'
+import { fetchPosts } from '../redux/actions/posts.js'
 import Post from './Post.js'
 
 function App ({ posts, onFetchPosts }) {

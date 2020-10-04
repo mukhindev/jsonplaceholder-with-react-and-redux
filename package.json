@@ -2,6 +2,9 @@
   "name": "jsonplaceholder-with-react-and-redux",
   "version": "0.1.0",
   "private": true,
+  "author": "Sergey Mukhin",
+  "description": "JSON Placeholder with React and Redux",
+  "homepage": "https://mukhindev.github.io/jsonplaceholder-with-react-and-redux/",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -16,11 +19,13 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages --dotfiles -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

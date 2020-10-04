@@ -9,7 +9,7 @@ import './index.css'
 
 const loggerMiddleware = (store) => (next) => (action) => {
   const result = next(action)
-  console.log('Middleware', store.getState())
+  console.log('Middleware', action, store.getState())
   return result
 }
 
