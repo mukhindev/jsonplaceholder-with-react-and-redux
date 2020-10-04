@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import './Counter.css'
 
 function App ({ counter, onAdd, onSub, onAddNumber }) {
-  console.log('<Counter2>', counter)
   const [number, setNumber] = React.useState(0)
 
   return (
@@ -31,7 +30,6 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-  console.log('mapDispatchToProps', dispatch)
   return {
     onAdd: () => dispatch({ type: 'ADD_2' }),
     onSub: () => dispatch({ type: 'SUB_2' }),

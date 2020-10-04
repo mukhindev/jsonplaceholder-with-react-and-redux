@@ -3,7 +3,6 @@ const initialState = {
 }
 
 export default function counter1 (state = initialState, action) {
-  console.log('rootReducer', action)
   switch (action.type) {
     case 'ADD_1':
       return { counter: state.counter + 1 }
