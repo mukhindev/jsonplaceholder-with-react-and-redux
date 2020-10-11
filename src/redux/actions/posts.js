@@ -9,8 +9,8 @@ export function setPosts (posts) {
 }
 
 export function fetchPosts () {
-  return (dispatch) => {
-    api.getPosts()
-      .then((posts) => dispatch(setPosts(posts)))
+  return async (dispatch) => {
+    const posts = await api.getPosts()
+    dispatch(setPosts(posts))
   }
 }
