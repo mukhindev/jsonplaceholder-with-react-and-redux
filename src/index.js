@@ -6,17 +6,14 @@ import rootReducer from './redux/rootReducer.js'
 import App from './components/App.js'
 import './index.css'
 
-const loggerMiddleware = (store) => (next) => (action) => {
-  const result = next(action)
-  console.log('loggerMiddleware', action, store.getState())
-  return result
+const loggerMiddleware = ({ getState }) => (next) => (action) => {
+  console.log('dispatch ->', action, getState())
+  return next(action)
 }
 
-const asyncActionMiddleware = ({ dispatch, getState }) => next => action => {
-  if (typeof action === 'function') {
-    return action(dispatch, getState)
-  }
-  return next(action)
+const asyncActionMiddleware = ({ dispatch }) => (next) => (action) => {
+  if (typeof action === 'function') return action(dispatch)
+  else return next(action)
 }
 
 const store = createStore(rootReducer, applyMiddleware(
